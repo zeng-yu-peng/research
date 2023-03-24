@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BK. 購物須知</title>
+  <link rel="stylesheet" type="text/css" href="../css/index_css.css">
+  <link rel="stylesheet" type="text/css" href="../css/barside.css">
+  <link rel="stylesheet" type="text/css" href="../css/product_manu.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" type="text/css" href="../css/index_contant.css">
+  <link rel="shortcut icon" href="../img/favicon (1).ico" type="image/x-icon">
+
+  <style>
+  .question_wrap{
+    position: relative;
+    max-width: 1200px;;
+    height: auto;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+  .question_wrap img{
+    height: 400px; width: 550px;
+    margin: 50px;
+    border-radius: 10%;
+    position: relative;
+    left: 5%;
+  }
+  .question_outborder{
+    display: flex;
+  }
+  .question_contant{
+    padding: 35px;
+    text-align: center;
+    font-size: 28px;
+    height: 400px;
+    width: 800px;
+    background-color: rgba(105, 136, 209, 0.75);
+    color: #ffffff;
+    position: relative;  top: 80px; left: -60px;
+  }
+  .question_contant p{
+    text-align: left;
+  }
+  .question_contant h2::before, .question_contant  h2::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 200px;
+  background-color: #ffffff;
+  margin: auto;
+  }
+    
+  </style>
+
+<script>
+    // 彈跳式清單
+    function button_open() {
+      document.getElementById("sidebar").style.display = "block";
+    }
+
+    function button_close() {
+      document.getElementById("sidebar").style.display = "none";
+    }
+
+    //搜尋欄位
+    var input = document.getElementById("myInput");
+    input.addEventListener("keyup", function (event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("myBtn").click();
+      }
+    });
+    //留言板
+     function openSearch() {
+     document.getElementById("myOverlay").style.display = "block";
+     }
+
+     function closeSearch() {
+     document.getElementById("myOverlay").style.display = "none";
+     }
+     function closeForm() {
+     document.getElementById("myOverlay").style.display = "none";
+     }
+
+     // Get the element with id="defaultOpen" and click on it
+     document.getElementById("defaultOpen").click();
+
+
+
+  </script>
+
+</head>
+
+<body>
+
+  
+  <header>
+    <div class="head">
+      <div class="head_icon"> <a href="../index.html"><img src="../img/shop-removebg-preview.png" alt="icon"></a> </div>
+
+
+      <div class="head_slogn">Questions</div>
+      <div class="head_search">
+        <input id="myInput" value="Search" />
+        <button id="myBtn">搜尋</button>
+      </div>
+      <div class="head_decoration">
+
+        <div class="login">
+          <div class="w3-container">
+            <div class="w3-dropdown-hover">
+              <button class="button">
+                <a href=""> <img id="profile" src="../img/profile.png" width="55px"> </a>
+              </button>
+              <div class="w3-dropdown-content w3-bar-block w3-border">
+                <a href="../login.html" class="w3-bar-item w3-button">Login</a>
+                <a href="../register.html" class="w3-bar-item w3-button">Register</a>
+                <a href="../member.html" class="w3-bar-item w3-button">My Info.</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div> <a href="../member/wish_list.html"><img src="../img/wishlist-12.png" alt="My wishlist"></a> </div>
+        <div> <a href="../member/cart.html"><img src="../img/carttt.png" alt="My Cart"></a> </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 伸縮manu -->
+<section>
+  <div class="side_button">
+      <button onclick="button_open()">☰</button>
+    </div>
+    <!-- 留言板 -->
+    <div id="myOverlay" class="overlay"
+      style="background: url(../img/back.jpeg); background-repeat: no-repeat; background-size: cover; z-index: 100000000000000000000000000000;">
+      <span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
+      <div class="overlay-content">
+        <form class="form-container" action="">
+          <h2 style="text-decoration: black;"><b>想跟 BK. 說的話:</b></h2>
+          <textarea placeholder=" 喝咖啡聊是非 快留下想對我們說的話吧:" name="msg" required></textarea>
+          <div class="btnbtw">
+            <button type="submit" class="btn">Send</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  <div class="manu" style="display:none" id="sidebar">
+    <button onclick="button_close()" class="barline">Close &times;</button>
+    <ul>
+      <li><a href="../index.html">商店介紹</a></li>
+      <li><a href="../manu/newbook.html">全部商品</a>
+        <ul>
+          <li><a href="../manu/top.html">熱銷排行</a></li>
+          <li><a href="../manu/magazine.html">Magazine</a></li>
+          <li><a href="../manu/ebook.html">電子書</a></li>
+        </ul>
+      </li>
+      <li><a href="aboutus.html">認識我們</a></li>
+      <li><a href="question.html">購物須知</a></li>
+      <li><a href="../teams.html">BK.成員介紹</a></li>
+        <li><button class="openBtn" onclick="openSearch()">留言板</button></li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="question_wrap">
+    <div class="question_outborder">
+      <div><img src="../img/store_detail/question1.jpg" alt=""></div>
+    <div class="question_contant">
+      <h2>宅配通路</h2><br>
+      <p>目前提供店到店、中華郵政及到店取貨<br>
+        (貨到付款)，以上三種方式。<br>
+        正在積極開發更多個通路方式，近請期待！
+      </p>
+    </div>
+    </div>
+    <div class="question_outborder">
+      <div><img src="../img/store_detail/question2.jpg" alt=""></div>
+      <div class="question_contant">
+        <h2>付款方式</h2><br>
+        <p>
+          1.信用卡付款：目前商城僅接受台灣地區發行的VISA、MASTERCARD、JCB、聯合信用卡。<br>
+          2.ATM付款<br>
+          3.超商ibon付款
+        </p>
+      </div>
+    </div>
+    <div class="question_outborder">
+      <div><img src="../img/store_detail/question3.jpg" alt=""></div>
+      <div class="question_contant">
+        <h2>退換貨須知</h2><br>
+        <p>一、退貨權益說明：您收到商品有瑕疵，可以主張換貨或退貨。<br>
+            二、依照消費者保護法規定，消費者均享有產品到貨7天猶豫期之權益，但提醒您，商品退貨時必須回復原狀，亦即必須回復至您收到商品時的原始狀態。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- footer -->
+<section>
+  <div class="footer">
+    <div class="footer_wrap">
+      <div>
+        <h4>關於我們</h4>
+
+        <ul>
+          <li><a href="">服務時間：週一至週五A.M. 8:00 ~ P.M. 6:00</a></li>
+          <li><a href="">電話 : (02)2502-8314</a></li>
+          <li><a href="">地址：320桃園市中壢區中北路200號</a></li>
+          <li><a href="">No. 200, Zhongbei Road, Zhongli District, Taoyuan City 320</a></li>
+        </ul>
+      </div>
+    </div>
+    
+
+    
+    <div class="footer_copyright">
+      <p>※若消費者為限制行為能力人或無行為能力人，應於消費者之法定代理人閱讀、瞭解並同意本契約之所有內容後，方得使用本網站下單。<br>
+        ※如為未滿20歲之未成年使用者，需經由家長同意方可購買與使用商城服務。<br>
+        本網站已依台灣網站內容分級規定處理｜建議使用瀏覽器版本：Google Chrome版本60以上 / Firefox版本48以上 / Safari 版本11以上</p>
+    </div>
+  </div>
+  
+</section>
+</body>
+
+</html>
+
